@@ -2,14 +2,14 @@
 lock "~> 3.11.0"
 
 set :application, "xiaoqianyu"
-set :repo_url, "git@github.com:suxiaohun/qianyu.git"
+set :repo_url, "https://github.com/suxiaohun/qianyu.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/crystal/deploy"
-
+set :deploy_to, "/home/crystal/deploy/qianyu"
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
