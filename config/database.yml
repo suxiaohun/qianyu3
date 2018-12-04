@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: qianyu_production
-  username: qianyu
-  password: <%= ENV['QIANYU_DATABASE_PASSWORD'] %>
+  database: qianyu
+  username: root
+  password: 123456

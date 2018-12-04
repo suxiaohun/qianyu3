@@ -8,8 +8,8 @@ set :repo_url, "https://github.com/suxiaohun/qianyu.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/crystal/deploy/qianyu"
-set :rvm_map_bins, %w{gem rake ruby rails bundle}
+set :deploy_to, "/home/crystal/deploy"
+#set :rvm_map_bins, %w{gem rake ruby rails bundle}
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -37,3 +37,28 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+#
+#
+
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+     task :restart do
+           invoke 'unicorn:legacy_restart'
+     end     
+end
+
+
+set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn.rb") }
+set :unicorn_pid, -> { File.join(root_path, "tmp", "pids", "unicorn.pid") }
+
+
+
+
+
+
+
+
+
+
+
+
