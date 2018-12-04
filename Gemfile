@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
-gem 'capistrano-unicorn'
+gem 'capistrano3-unicorn'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
 
