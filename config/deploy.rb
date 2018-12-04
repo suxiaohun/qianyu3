@@ -41,6 +41,8 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 #
 
 
+require 'capistrano-unicorn'
+
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
 after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
