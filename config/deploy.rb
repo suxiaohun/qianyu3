@@ -57,7 +57,7 @@ end
 
 
 set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn.rb") }
-set :unicorn_pid, -> { File.join(root_path, "tmp", "pids", "unicorn.pid") }
+#set :unicorn_pid, -> { File.join("tmp", "pids", "unicorn.pid") }
 
 
 
